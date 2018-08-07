@@ -23,7 +23,7 @@ namespace WebApplication3.Controllers
         [EnumMember(Value = "stringedit")]
         StringEdit
     }
-    
+
     public class JsonPropertyAttribute : Attribute
     {
         public JsonPropertyAttribute(string argName)
@@ -38,13 +38,11 @@ namespace WebApplication3.Controllers
     {
         public Type ConverterType
         {
-            get;
-            set;
+            get; set;
         }
         public string ValueType
         {
-            get;
-            set;
+            get; set;
         }
         public JsonConverterAttribute(Type type, string valueType)
         {
@@ -105,7 +103,7 @@ namespace WebApplication3.Controllers
             }
         }
     }
-    
+
     [Serializable]
     public class TestClass
     {
@@ -114,9 +112,6 @@ namespace WebApplication3.Controllers
         [JsonProperty("editType")]
         [DefaultValue(EditingType.StringEdit)]
         [JsonConverter(typeof(StringEnumConverter))]
-        /// <summary>
-        /// Gets or sets a value that indicates to render the element(based on edit type) for editing the grid record.
-        /// </summary>
         public EditingType EditType
         {
             get { return _editingType; }
